@@ -1,0 +1,52 @@
+html {
+  font-family: Courier, Courier New, monospace;
+  font-size: 1.2em;
+}
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+table {
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+}
+
+td {
+  text-align: center;
+  background-color: red;
+  border: .2em solid white;
+}
+
+hr {
+  border: .2em solid white;
+}
+
+.safe {
+  background-color: lightgreen;
+}
+
+@import '~dialog-polyfill/dialog-polyfill.css';
+
+dialog::backdrop,
+dialog + .backdrop {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.fdc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+button {
+  margin: 1em 0;
+  border: .2em solid black;
+  background: none;
+}

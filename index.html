@@ -4,45 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Caution and warning</title>
-  <style>
-    html {
-      font-family: monospace;
-      font-size: 1.2em;
-    }
-    * {
-      box-sizing: border-box;
-      font: inherit;
-    }
-    body {
-      margin: 0;
-    }
-    table {
-      width: 100vw;
-      height: 100vh;
-      padding: 2em;
-    }
-    td {
-      text-align: center;
-      background-color: red;
-      border: .2em solid white;
-    }
-    hr {
-      border: .2em solid white;
-    }
-    .safe {
-      background-color: lightgreen;
-    }
-    dialog::backdrop { background: rgba(0,0,0,0.2); }
-    .fdc {
-      display: flex;
-      flex-direction: column;
-    }
-    button {
-      margin: 1em;
-      border: .2em solid black;
-      background: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -111,21 +72,5 @@
     </tr>
   </table>
 </body>
-<script>
-const data = {
-  'HYD PRESS': 'bla bla text'
-}
-const items = document.querySelectorAll('[data-item]');
-for (var i = items.length - 1; i >= 0; i--) {
-  items[i].addEventListener('click', showInfo);
-}
-function showInfo(e) {
-  let content = 'no data found'
-  if (e.target.dataset.item in data) {
-    content = data[e.target.dataset.item];
-  }
-  info.innerHTML = content;
-  modal.showModal();
-}
-</script>
+<script src="build.js"></script>
 </html>
