@@ -2,11 +2,11 @@
   "name": "jwr-caw",
   "version": "0.1.0",
   "description": "A caution and warning system for the JWR shuttle",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "watch": "cross-env NODE_ENV=production webpack --watch --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start": "npm run build && node index.js"
+    "server": "npm run build && node server.js"
   },
   "repository": {
     "url": "https://github.com/jwronline/caw.git",
@@ -17,7 +17,6 @@
   "dependencies": {
     "dialog-polyfill": "^0.4.4",
     "express": "^4.14.0",
-    "http": "^0.0.0",
     "socket.io": "^1.5.1"
   },
   "devDependencies": {

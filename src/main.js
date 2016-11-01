@@ -1,4 +1,8 @@
 require("./main.scss");
+
+const socket = io.connect('http://localhost:3000');
+socket.on('toggle', toggle);
+
 const dialogPolyfill = require('dialog-polyfill');
 
 var dialog = document.querySelector('dialog');
@@ -39,10 +43,9 @@ function showInfo(e) {
 /**
  * click a certain caution to toggle
  * @param  {event} e a click event
- * @return {Promise}   resolves when it has been toggled
  */
 function clickToggle(e) {
-  return toggle(e.target.dataset.item);
+  socket.emit('toggle', e.target.dataset.item);
 }
 
 /**
@@ -57,5 +60,3 @@ function toggle(caution) {
     resolve(element.classList.safe);
   })
 }
-
-window.toggle = toggle;

@@ -7,6 +7,12 @@
 </head>
 
 <body data-role="admin">
+  <dialog id="modal">
+    <div class="fdc">
+      <div id="info"></div>
+      <button onclick="modal.close();">ok</button>
+    </div>
+  </dialog>
   <table>
     <tr>
       <td class="safe" data-item="O2 PRESS">O2 PRESS</td>
@@ -66,5 +72,6 @@
     </tr>
   </table>
 </body>
+<script src="/socket.io/socket.io.js"></script>
 <script src="build.js"></script>
 </html>
