@@ -1,0 +1,12 @@
+{
+  "name": "Caution and Warning",
+  "version": "0.1.0",
+  "description": "A caution and warning system for the JWR shuttle",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/jwronline/caw.git",
+    "type": "git"
+  },
+  "author": "Haroen Viaene <hello@haroen.me>",
+  "license": "Apache-2.0"
+}
