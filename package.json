@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "server": "npm run build && node server.js",
     "start": "npm run build && electron app.js",
-    "pack": "electron-packager . --platform=linux,darwin,win32 --arch=x64 --overwrite"
+    "pack": "npm run build && electron-packager . --platform=linux,darwin,win32 --arch=x64 --overwrite"
   },
   "repository": {
     "url": "https://github.com/jwronline/caw.git",
