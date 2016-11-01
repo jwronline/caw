@@ -1,5 +1,5 @@
 {
-  "name": "Caution and Warning",
+  "name": "jwr-caw",
   "version": "0.1.0",
   "description": "A caution and warning system for the JWR shuttle",
   "main": "index.js",
@@ -8,5 +8,8 @@
     "type": "git"
   },
   "author": "Haroen Viaene <hello@haroen.me>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "dialog-polyfill": "^0.4.4"
+  }
 }
