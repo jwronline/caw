@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "cross-env NODE_ENV=production webpack --watch --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "server": "npm run build && node server.js"
+    "server": "npm run build && node server.js",
+    "start": "npm run build && electron app.js"
   },
   "repository": {
     "url": "https://github.com/jwronline/caw.git",
@@ -16,7 +17,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "dialog-polyfill": "^0.4.4",
+    "electron": "^1.4.5",
     "express": "^4.14.0",
+    "opn": "^4.0.2",
     "socket.io": "^1.5.1"
   },
   "devDependencies": {
