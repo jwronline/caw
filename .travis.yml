@@ -2,30 +2,30 @@ language: node_js
 dist: trusty
 sudo: required
 node_js:
-  - 6
+- 6
 branches:
   only:
   - gh-pages
 before_install:
-  # wine needs 32 bit architecture
-  - sudo dpkg --add-architecture i386
-  - sudo apt-get -qq update
-  - sudo apt-get install wine1.6
+- sudo dpkg --add-architecture i386
+- sudo apt-get -qq update
+- sudo apt-get install wine1.6
 install:
-  - npm install
+- npm install
 script:
-  - npm run pack
-  - zip -r jwr-caw-linux-x64 jwr-caw-linux-x64/
-  - zip -r jwr-caw-darwin-x64 jwr-caw-darwin-x64/
-  - zip -r jwr-caw-win32-x64 jwr-caw-win32-x64/
+- npm run pack
+- zip -r jwr-caw-linux-x64 jwr-caw-linux-x64/
+- zip -r jwr-caw-darwin-x64 jwr-caw-darwin-x64/
+- zip -r jwr-caw-win32-x64 jwr-caw-win32-x64/
 deploy:
   skip_cleanup: true
   provider: releases
+  api_key:
+    secure: O08BVSmvkU+0aF/LGwCm41ewLvgadBFX7VAfrPY61K6/2dIdd7jwx5M+hv0scgMoJeSLp1EFX2Vg/ShkZNO8gj2hUbIzEcxPAttVEghu5vSS9DciFlw1cAvuo1iaFbIyYqKbulLBx9sSGVGyFS1IC/AnvVDgR+t5OL9tzSESBpAdwYsvZpNaF+7scGm0PJKbF8lTj6ySzLrQGXkgg6+3im96L46BkIMMaw2HxGImEbbYg4mjomaLyDauZJ2uB40bKZnX/NikbqEPcmSd5teQJbIAieZ4TC5frLOkkGaw0358dCuyhKJVoWmHSS5+Ji2BVVsH4vYOiAXbmHKyBORV+vhtgXBP0drv+jZtrNLAflXEZHpxEY3T1JYW03V7sirsLAU1OPTcUNxRRFj7MT2AaetZ71XAl52J2L+7FyOyvkHIoaCE8Fs1bpefS/W1bW5K3odZ5flHHZUsgkCswbVC3o6UMHlznLl3VujZMafJIERHpMOKKE+09Y6M2NcPDNIZDbyStmQmVvyx6NN+xxl/TyEbMvEYV7rKYg9ViYQ4CYvwXwLLRuhDjD28fIxPZ8bRM8UFp/rFK/taUrol7tXVBHPmnAQBtTnbtdtsbu6eSPKmVqjmUhvRlJK42K/3QXUadg3prIAPOC2/y+3nNPIsuy4OHFHHZ5B/Sz4JTuA7YYQ=
   file:
     - jwr-caw-linux-x64.zip
     - jwr-caw-darwin-x64.zip
     - jwr-caw-win32-x64.zip
   on:
-    # tags: true
     repo: jwronline/caw
     branch: gh-pages
