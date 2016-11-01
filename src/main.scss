@@ -26,11 +26,15 @@ td {
 }
 
 hr {
-  border: .2em solid white;
+  border: .2em solid black;
 }
 
 .safe {
   background-color: lightgreen;
+}
+
+.none {
+  background-color: transparent;
 }
 
 @import '~dialog-polyfill/dialog-polyfill.css';
