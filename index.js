@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/admin.html');
 });
 
 app.use(express.static('dist'));
