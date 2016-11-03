@@ -5,7 +5,7 @@ node_js:
 - 6
 branches:
   only:
-  - gh-pages
+  - master
 before_install:
 - sudo dpkg --add-architecture i386
 - sudo apt-get -qq update
@@ -28,4 +28,4 @@ deploy:
     - jwr-caw-win32-x64.zip
   on:
     repo: jwronline/caw
-    branch: gh-pages
+    tags: true
