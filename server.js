@@ -3,12 +3,14 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+app.set('view engine', 'pug');
+
 app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  res.render('main', {role: 'client'});
 });
 
 app.get('/admin', (req, res) => {
-  res.sendFile(`${__dirname}/admin.html`);
+  res.render('main', {role: 'admin'});
 });
 
 app.use(express.static(`${__dirname}/dist`));
