@@ -33,8 +33,8 @@ function createWindow() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 800,
+    width: 720,
+    height: 720,
     icon: 'src/img/favicon-804.png'
   });
 

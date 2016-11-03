@@ -1,8 +1,13 @@
+$c-background: white;
+$c-bad: red;
+$c-good: lightgreen;
+
 html {
   font-family: Courier, Courier New, monospace;
   font-size: 1.4em;
   -webkit-user-select: none;
   user-select: none;
+  background-color: $c-background;
 }
 
 * {
@@ -22,9 +27,9 @@ table {
 
 td {
   text-align: center;
-  background-color: red;
+  background-color: $c-bad;
   transition: background-color .2s;
-  border: .2em solid white;
+  border: .2em solid $c-background;
   cursor: pointer;
 }
 
@@ -33,7 +38,7 @@ hr {
 }
 
 .safe {
-  background-color: lightgreen;
+  background-color: $c-good;
 }
 
 .none {
