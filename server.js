@@ -11,7 +11,7 @@ app.get('/admin', (req, res) => {
   res.sendFile(__dirname + '/admin.html');
 });
 
-app.use(express.static('dist'));
+app.use(express.static(__dirname + '/dist'));
 
 http.listen(3000, () => {
   console.log('listening on *:3000');
