@@ -4,14 +4,14 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(`${__dirname}/index.html`);
 });
 
 app.get('/admin', (req, res) => {
-  res.sendFile(__dirname + '/admin.html');
+  res.sendFile(`${__dirname}/admin.html`);
 });
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(`${__dirname}/dist`));
 
 http.listen(3000, () => {
   console.log('listening on *:3000');
