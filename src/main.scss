@@ -23,6 +23,8 @@ table {
   width: 100vw;
   height: 100vh;
   padding: 2em;
+  border-width: 30px;
+  border-image: url('/border.svg') 1 fill stretch;
 }
 
 td {

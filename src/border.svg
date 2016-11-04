@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 204">
+  <g fill="none" stroke="black">
+    <g transform="translate(199.5 4.325)">
+      <circle cx="4" cy="4" r="4" />
+      <path d="M4 .364v7.31M.364 4h7.272" stroke-linecap="square" />
+    </g>
+    <g transform="translate(4.253 4.325)">
+      <circle cx="4" cy="4" r="4" />
+      <path d="M4 .364v7.31M.364 4h7.272" stroke-linecap="square" />
+    </g>
+    <g transform="translate(199.5 192.5)">
+      <circle cx="4" cy="4" r="4" />
+      <path d="M4 .364v7.31M.364 4h7.272" stroke-linecap="square" />
+    </g>
+    <g transform="translate(4.253 192.5)">
+      <circle cx="4" cy="4" r="4" />
+      <path d="M4 .364v7.31M.364 4h7.272" stroke-linecap="square" />
+    </g>
+    <rect width="209.854" height="201.782" x="1.146" y="1.218" rx="8" />
+  </g>
+</svg>
