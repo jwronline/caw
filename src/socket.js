@@ -1,3 +1,4 @@
+import io from 'socket.io-client';
 import toggle from './toggle.js';
 
 const socket = io.connect('http://localhost:3000');
