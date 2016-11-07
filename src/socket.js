@@ -1,4 +1,4 @@
-const toggle = require('./toggle.js');
+import toggle from './toggle.js';
 
 const socket = io.connect('http://localhost:3000');
 socket.on('toggle', toggle);

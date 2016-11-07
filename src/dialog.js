@@ -1,4 +1,4 @@
-const dialogPolyfill = require('dialog-polyfill');
+import dialogPolyfill from 'dialog-polyfill';
 
 var dialog = document.querySelector('dialog');
 dialogPolyfill.registerDialog(dialog);

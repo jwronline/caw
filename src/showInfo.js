@@ -1,4 +1,4 @@
-const solutions = require('./solutions.json');
+import solutions from './solutions.json';
 
 /**
  * Show info about a caution
