@@ -2,7 +2,10 @@ import io from 'socket.io-client';
 import toggle from './toggle.js';
 
 const socket = io.connect('http://localhost:3000');
-socket.on('toggle', toggle);
+socket.on('toggle', caution => {
+  toggle(caution)
+    .catch(console.warn);
+});
 
 /**
  * click a certain caution to toggle
