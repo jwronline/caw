@@ -16,6 +16,6 @@ function emitToggle(e) {
   }
 }
 
-module.exports = {
+export default {
   emitToggle
 };
