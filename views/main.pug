@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
+    meta(name='viewport', value='width=device-height, initial-scale=1')
     title Caution and warning
     link(rel='stylesheet', href='/styles.css')
   body(data-role=role)
@@ -10,55 +11,9 @@ html(lang='en')
         #info
         button(onclick='modal.close();') ok
     table
-      tr
-        td.safe(data-item='O2 PRESS') O2 PRESS
-        td.safe(data-item='H2 PRESS') H2 PRESS
-        td.safe(data-item='FUEL CELL REAC') FUEL CELL REAC
-        td.safe(data-item='FUEL CELL STACK TEMP') FUEL CELL STACK TEMP
-        td.safe(data-item='FUEL CELL PUMP') FUEL CELL PUMP
-      tr
-        td.safe(data-item='CABIN ATM') CABIN ATM
-        td.safe(data-item='O2 HEATER TEMP') O2 HEATER TEMP
-        td.safe(data-item='MAIN BUS UNDERVOLT') MAIN BUS UNDERVOLT
-        td.safe(data-item='AC VOLTAGE') AC VOLTAGE
-        td.safe(data-item='AC OVERLOAD') AC OVERLOAD
-      tr
-        td.safe(data-item='FREON LOOP') FREON LOOP
-        td.safe(data-item='AV BAY / CABIN AIR') AV BAY / CABIN AIR
-        td.safe(data-item='IMU') IMU
-        td.safe(data-item='FWD RCS') FWD RCS
-        td.safe(data-item='RCS JET') RCS JET
-      tr
-        td.safe(data-item='H2O LOOP') H2O LOOP
-        td.safe(data-item='RGA / ACCEL') RGA / ACCEL
-        td.safe(data-item='AIR DATA') AIR DATA
-        td.safe(data-item='LEFT RCS') LEFT RCS
-        td.safe(data-item='RIGHT RCS') RIGHT RCS
-      tr
-        td.none
-          hr
-        td.safe(data-item='LEFT RHC') LEFT RHC
-        td.safe(data-item='RIGHT / AFT RHC') RIGHT / AFT RHC
-        td.safe(data-item='LEFT OMS') LEFT OMS
-        td.safe(data-item='RIGHT OMS') RIGHT OMS
-      tr
-        td.safe(data-item='PAYLOAD WARNING') PAYLOAD WARNING
-        td.safe(data-item='GPC') GPC
-        td.safe(data-item='FCS SATURATION') FCS SATURATION
-        td.safe(data-item='OMS KIT') OMS KIT
-        td.safe(data-item='OMS TVC') OMS TVC
-      tr
-        td.safe(data-item='PAYLOAD CAUTION') PAYLOAD CAUTION
-        td.safe(data-item='PRIMARY C/W') PRIMARY C/W
-        td.safe(data-item='FCS CHANNEL') FCS CHANNEL
-        td.safe(data-item='MPS') MPS
-        td.none
-          hr
-      tr
-        td.safe(data-item='BACKUP C/W ALARM') BACKUP C/W ALARM
-        td.safe(data-item='APU TEMP') APU TEMP
-        td.safe(data-item='APU OVERSPEED') APU OVERSPEED
-        td.safe(data-item='APU UNDERSPEED') APU UNDERSPEED
-        td.safe(data-item='HYD PRESS') HYD PRESS
+      - items = Object.keys(data)
+      - for (let i = 0; i < items.length; i += 5)
+        tr
+          each val in items.slice(i, i + 5)
+            td.container--item.safe(data-item=val)= val
   script(src='/build.js')
-
