@@ -45,6 +45,14 @@
     "xo": "^0.17.0"
   },
   "xo": {
-    "space": true
+    "space": true,
+    "overrides": [
+      {
+        "files": "src/js/**.js",
+        "envs": [
+          "browser"
+        ]
+      }
+    ]
   }
 }
