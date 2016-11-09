@@ -45,6 +45,6 @@
     "xo": "^0.17.0"
   },
   "xo": {
-    "spaces": true
+    "space": true
   }
 }
