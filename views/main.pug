@@ -10,7 +10,7 @@ html(lang='en')
       .fdc
         #info
         button(onclick='modal.close();') ok
-    table
+    table.container
       - items = Object.keys(data)
       - for (let i = 0; i < items.length; i += 5)
         tr
