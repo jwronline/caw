@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-import toggle from './toggle.js';
+import toggle from './toggle';
 
 const socket = io.connect('http://localhost:3000');
 socket.on('toggle', caution => {

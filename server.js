@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
@@ -24,7 +25,8 @@ app.get('/admin', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '/dist')));
 
-http.listen(3000, () => {
+http.listen(3000, (x) => {
+  console.log(x);
   console.log('listening on *:3000');
 });
 
