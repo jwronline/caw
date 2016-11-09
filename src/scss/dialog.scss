@@ -1,0 +1,12 @@
+@import '~dialog-polyfill/dialog-polyfill.css';
+
+dialog::backdrop,
+dialog + .backdrop {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+dialog button {
+  margin: 1em 0;
+  border: .2em solid black;
+  background: none;
+}

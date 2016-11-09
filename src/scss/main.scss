@@ -19,18 +19,27 @@ body {
   margin: 0;
 }
 
-table {
+.fdc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container {
   width: 100vw;
   height: 100vh;
   padding: 2em;
-}
 
-td {
-  text-align: center;
-  background-color: $c-bad;
-  transition: background-color .2s;
-  border: .2em solid $c-background;
-  cursor: pointer;
+  &--item {
+    text-align: center;
+    background-color: $c-bad;
+    transition: background-color .2s;
+    border: .2em solid $c-background;
+    padding: .2em;
+    cursor: pointer;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
 }
 
 hr {
@@ -45,21 +54,4 @@ hr {
   background-color: transparent;
 }
 
-@import '~dialog-polyfill/dialog-polyfill.css';
-
-dialog::backdrop,
-dialog + .backdrop {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.fdc {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-button {
-  margin: 1em 0;
-  border: .2em solid black;
-  background: none;
-}
+@import 'dialog';

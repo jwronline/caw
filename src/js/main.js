@@ -1,4 +1,4 @@
-import './main.scss';
+import '../scss/main.scss';
 
 import './dialog.js';
 import socket from './socket.js';
@@ -10,4 +10,3 @@ if (document.body.dataset.role === 'admin') {
 } else {
   setListeners(showInfo);
 }
-
