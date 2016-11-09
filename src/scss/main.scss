@@ -1,0 +1,57 @@
+$c-background: white;
+$c-bad: red;
+$c-good: lightgreen;
+
+html {
+  font-family: Courier, Courier New, monospace;
+  font-size: 1.4em;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: $c-background;
+}
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.fdc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+
+  &--item {
+    text-align: center;
+    background-color: $c-bad;
+    transition: background-color .2s;
+    border: .2em solid $c-background;
+    padding: .2em;
+    cursor: pointer;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
+hr {
+  border: .2em solid black;
+}
+
+.safe {
+  background-color: $c-good;
+}
+
+.none {
+  background-color: transparent;
+}
+
+@import 'dialog';
