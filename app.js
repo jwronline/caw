@@ -1,14 +1,9 @@
 'use strict';
 
-const electron = require('electron');
-// Module to control application life.
+const {app, BrowserWindow, dialog} = require('electron');
+// const {dialog} = remote;
 require('./server.js');
-// start the server
 const opn = require('opn');
-// open externally
-const app = electron.app;
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,19 +17,32 @@ function showServerStarted() {
     .filter(x => x[1])
     .map(x => x[1].address);
 
-  electron.dialog.showMessageBox({
+  dialog.showMessageBox({
     type: 'info',
     message: `Open http://${currentIP[1]}:3000/admin on another computer to control the cautions and warnings`,
     buttons: ['ok']
   });
 }
 
+require('electron-context-menu')({
+  prepend: params => [{
+    label: 'Rainbow',
+    // only show it when right-clicking images
+    visible: params.mediaType === 'image'
+  }, {
+    label: 'Show IP',
+    click() {
+      showServerStarted();
+    }
+  }]
+});
+
 function createWindow() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 720,
-    height: 720,
+    width: 760,
+    height: 760,
     icon: 'src/img/favicon-804.png'
   });
 
@@ -54,7 +62,7 @@ function createWindow() {
   showServerStarted();
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
+  mainWindow.on('closed', _ => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
@@ -67,7 +75,7 @@ function createWindow() {
 app.on('ready', createWindow);
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function () {
+app.on('window-all-closed', _ => {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
@@ -75,7 +83,7 @@ app.on('window-all-closed', function () {
   }
 });
 
-app.on('activate', function () {
+app.on('activate', _ => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
