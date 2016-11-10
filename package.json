@@ -6,7 +6,6 @@
   "scripts": {
     "watch": "webpack --watch --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "server": "npm run build && node server.js",
     "start": "npm run build && electron app.js",
     "pack": "npm run build && electron-packager . --platform=linux,darwin,win32 --arch=x64 --overwrite",
     "test": "xo"
