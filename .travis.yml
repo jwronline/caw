@@ -13,6 +13,8 @@ before_install:
 install:
 - npm install
 script:
+- npm test
+after_success:
 - npm run pack
 - zip -r jwr-caw-linux-x64 jwr-caw-linux-x64/
 - zip -r jwr-caw-darwin-x64 jwr-caw-darwin-x64/
