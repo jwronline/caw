@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 import toggle from './toggle';
 
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect();
 socket.on('toggle', caution => {
   toggle(caution)
     .catch(console.warn);
