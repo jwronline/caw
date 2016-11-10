@@ -25,12 +25,16 @@ app.get('/admin', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '/dist')));
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
-});
+module.exports = {
+  start() {
+    http.listen(3000, () => {
+      console.log('listening on *:3000');
+    });
 
-io.on('connection', socket => {
-  socket.on('toggle', msg => {
-    io.emit('toggle', msg);
-  });
-});
+    io.on('connection', socket => {
+      socket.on('toggle', msg => {
+        io.emit('toggle', msg);
+      });
+    });
+  }
+};

@@ -2,8 +2,9 @@
 
 const {app, BrowserWindow, dialog} = require('electron');
 // const {dialog} = remote;
-require('./server.js');
 const opn = require('opn');
+
+require('./server.js').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
