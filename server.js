@@ -1,9 +1,11 @@
 const path = require('path');
+const http = require('http');
 const express = require('express');
 
 const app = express();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const server = new http.Server(app);
+const io = require('socket.io')(server);
+
 const data = require('./src/js/solutions.json');
 
 app.set('view engine', 'pug');
@@ -27,7 +29,7 @@ app.use(express.static(path.join(__dirname, '/dist')));
 
 module.exports = {
   start() {
-    http.listen(3000, () => {
+    server.listen(3000, () => {
       console.log('listening on *:3000');
     });
 
