@@ -21,9 +21,9 @@ script:
 - npm test
 after_success:
 - npm run pack
-- zip -q -T -m -r jwr-caw-linux-x64 jwr-caw-linux-x64/ && echo "linux success" || echo "linux failed"
-- zip -q -T -m -r jwr-caw-darwin-x64 jwr-caw-darwin-x64/ && echo "darwin success" || echo "darwin failed"
-- zip -q -T -m -r jwr-caw-win32-x64 jwr-caw-win32-x64/ && echo "win32 success" || echo "win32 failed"
+- zip -q -T -m -r jwr-caw-linux-x64/ jwr-caw-linux-x64 && echo "linux success" || echo "linux failed"
+- zip -q -T -m -r jwr-caw-darwin-x64/ jwr-caw-darwin-x64 && echo "darwin success" || echo "darwin failed"
+- zip -q -T -m -r jwr-caw-win32-x64/ jwr-caw-win32-x64 && echo "win32 success" || echo "win32 failed"
 deploy:
   skip_cleanup: true
   provider: releases
