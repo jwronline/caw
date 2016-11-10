@@ -26,7 +26,7 @@ function showServerStarted() {
 }
 
 require('electron-context-menu')({
-  prepend: params => [{
+  prepend: () => [{
     label: 'Show IP',
     click() {
       showServerStarted();
