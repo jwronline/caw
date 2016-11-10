@@ -1,3 +1,4 @@
+import {el as dialog, content as info} from './dialog';
 import solutions from './solutions';
 
 /**
@@ -5,12 +6,10 @@ import solutions from './solutions';
  * @param  {event} e a click event
  */
 export default function showInfo(e) {
-  const info = document.getElementById('info');
-  const modal = document.getElementById('modal');
-  let content = 'no data found';
+  let message = 'no data found';
   if (e.target.dataset.item in solutions) {
-    content = solutions[e.target.dataset.item];
+    message = solutions[e.target.dataset.item];
   }
-  info.innerHTML = content;
-  modal.showModal();
+  info.innerHTML = message;
+  dialog.showModal();
 }

@@ -25,8 +25,7 @@ app.get('/admin', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '/dist')));
 
-http.listen(3000, (x) => {
-  console.log(x);
+http.listen(3000, () => {
   console.log('listening on *:3000');
 });
 

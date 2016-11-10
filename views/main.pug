@@ -8,7 +8,7 @@ html(lang='en')
   body(data-role=role)
     dialog#modal
       .fdc
-        #info
+        .content
         button(onclick='modal.close();') ok
     table.container
       - items = Object.keys(data)

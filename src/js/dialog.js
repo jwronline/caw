@@ -1,4 +1,13 @@
 import dialogPolyfill from 'dialog-polyfill';
 
-var dialog = document.querySelector('dialog');
-dialogPolyfill.registerDialog(dialog);
+const el = document.querySelector('dialog');
+dialogPolyfill.registerDialog(el);
+
+const content = el.querySelector('.content');
+
+const foo = Math.PI + Math.SQRT2;
+
+export {
+  el,
+  content
+};
