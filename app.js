@@ -1,7 +1,7 @@
 'use strict';
 
 const {app, BrowserWindow, dialog} = require('electron');
-// const {dialog} = remote;
+// const {dialog} = require('electron').remote;
 const opn = require('opn');
 
 require('./server.js').start();
@@ -27,10 +27,6 @@ function showServerStarted() {
 
 require('electron-context-menu')({
   prepend: params => [{
-    label: 'Rainbow',
-    // only show it when right-clicking images
-    visible: params.mediaType === 'image'
-  }, {
     label: 'Show IP',
     click() {
       showServerStarted();
