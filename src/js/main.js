@@ -1,4 +1,4 @@
-import '../scss/main.scss';
+import _ from '../scss/main.scss';
 
 import socket from './socket';
 import showInfo from './show-info';
