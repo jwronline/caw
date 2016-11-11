@@ -2,13 +2,13 @@ doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
-    meta(name='viewport', value='width=device-height, initial-scale=1')
+    meta(name='viewport', value='width=device-width, initial-scale=1, scale-to-fit=no')
     title Caution and warning
     link(rel='stylesheet', href='/styles.css')
   body(data-role=role)
     dialog#modal
       .fdc
-        #info
+        .content
         button(onclick='modal.close();') ok
     table.container
       - items = Object.keys(data)

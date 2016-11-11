@@ -12,5 +12,5 @@ export default function toggle(caution) {
     } else {
       reject(`Caution ${caution} wasn't found`);
     }
-  })
+  });
 }

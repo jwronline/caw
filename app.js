@@ -1,9 +1,10 @@
 'use strict';
 
 const {app, BrowserWindow, dialog} = require('electron');
-// const {dialog} = remote;
-require('./server.js');
+// const {dialog} = require('electron').remote;
 const opn = require('opn');
+
+require('./server.js').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,11 +26,7 @@ function showServerStarted() {
 }
 
 require('electron-context-menu')({
-  prepend: params => [{
-    label: 'Rainbow',
-    // only show it when right-clicking images
-    visible: params.mediaType === 'image'
-  }, {
+  prepend: () => [{
     label: 'Show IP',
     click() {
       showServerStarted();
@@ -38,7 +35,6 @@ require('electron-context-menu')({
 });
 
 function createWindow() {
-
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 760,
@@ -62,7 +58,7 @@ function createWindow() {
   showServerStarted();
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', _ => {
+  mainWindow.on('closed', () => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
@@ -75,7 +71,7 @@ function createWindow() {
 app.on('ready', createWindow);
 
 // Quit when all windows are closed.
-app.on('window-all-closed', _ => {
+app.on('window-all-closed', () => {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
@@ -83,7 +79,7 @@ app.on('window-all-closed', _ => {
   }
 });
 
-app.on('activate', _ => {
+app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {

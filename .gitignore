@@ -1,2 +1,4 @@
-jwr-caw-*
+jwr-caw-linux-x64
+jwr-caw-darwin-x64
+jwr-caw-win32-x64
 dist

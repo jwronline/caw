@@ -1,9 +1,8 @@
-import '../scss/main.scss';
+import _ from '../scss/main.scss';
 
-import './dialog.js';
-import socket from './socket.js';
-import showInfo from './showInfo.js';
-import setListeners from './setListeners.js';
+import socket from './socket';
+import showInfo from './show-info';
+import setListeners from './set-listeners';
 
 if (document.body.dataset.role === 'admin') {
   setListeners(socket.emitToggle);

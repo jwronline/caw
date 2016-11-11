@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -16,11 +16,11 @@ module.exports = {
     loaders: [
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(['css','sass'])
+        loader: ExtractTextPlugin.extract(['css', 'sass'])
       },
       {
         test: /\.js$/,
-        loader: "strip-loader?strip[]=console.info"
+        loader: 'strip-loader?strip[]=console.info'
       },
       {
         test: /\.js$/,
@@ -45,7 +45,7 @@ module.exports = {
     ]
   },
   sassLoader: {
-    data: "$env: " + process.env.NODE_ENV + ";"
+    data: '$env: ' + process.env.NODE_ENV + ';'
   },
   devServer: {
     historyApiFallback: true,
