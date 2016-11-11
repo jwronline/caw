@@ -3,9 +3,6 @@ dist: trusty
 sudo: required
 node_js:
 - 6
-branches:
-  only:
-  - master
 cache:
   key: apt-cache
   paths:
