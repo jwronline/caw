@@ -11,14 +11,13 @@ before_install:
 - sudo dpkg --add-architecture i386
 - sudo apt-get -qq update
 - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
-- sudo apt-get -o dir::cache::archives="$APT_CACHE_DIR" install wine1.6
+- sudo apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install wine1.6
 install:
 - npm install
 script:
 - npm test
 after_success:
 - npm run pack
-- ls
 - zip -r jwr-caw-linux-x64 jwr-caw-linux-x64/
 - zip -r jwr-caw-darwin-x64 jwr-caw-darwin-x64/
 - zip -r jwr-caw-win32-x64 jwr-caw-win32-x64/
