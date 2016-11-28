@@ -7,7 +7,7 @@
     "watch": "webpack --watch --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start": "npm run build && electron app.js",
-    "pack": "npm run build && electron-packager . --platform=linux,darwin,win32 --arch=x64 --overwrite --ignore=apt-cache",
+    "pack": "npm run build && electron-packager . --platform=all --icon=src/icon --overwrite --ignore=apt-cache",
     "test": "xo"
   },
   "repository": {
