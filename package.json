@@ -1,6 +1,6 @@
 {
   "name": "jwr-caw",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A caution and warning system for the JWR shuttle",
   "main": "app.js",
   "scripts": {
