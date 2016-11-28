@@ -4,6 +4,7 @@ sudo: required
 node_js:
 - 6
 cache:
+  yarn: true
   key: apt-cache
   paths:
   - apt-cache/
@@ -12,8 +13,6 @@ before_install:
 - sudo apt-get -qq update
 - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
 - sudo apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install wine1.6
-install:
-- yarn
 script:
 - npm test
 after_success:
