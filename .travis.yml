@@ -13,7 +13,7 @@ before_install:
 - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
 - sudo apt-get -qq -o dir::cache::archives="$APT_CACHE_DIR" install wine1.6
 install:
-- npm install
+- yarn
 script:
 - npm test
 after_success:
