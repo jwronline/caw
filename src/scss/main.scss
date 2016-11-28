@@ -28,7 +28,11 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
-  padding: 2em;
+  padding: 1em;
+
+  @media (min-width: 580px) {
+    padding: 2em;
+  }
 
   &--item {
     text-align: center;
@@ -40,25 +44,30 @@ body {
   }
 
 
-  // @media (max-width: 740px) {
-    tr {
-      display: flex;
-      flex-wrap: wrap;
-    }
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .6em;
+  }
 
-    &--item {
-      flex: 1 0 10em;
-      padding: 1em;
-    }
-  // }
+  &--item {
+    flex: 1 0 10em;
+    padding: 1em;
+  }
 
-  @media (min-width: 740px) {
+  @media (min-width: 580px) {
     tr {
       display: table-row;
     }
 
     &--item {
       padding: .2em;
+    }
+  }
+
+  @media (min-width: 740px) {
+    tr {
+      font-size: 1em;
     }
   }
 }
